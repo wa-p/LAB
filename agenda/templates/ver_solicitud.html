@@ -1,0 +1,20 @@
+<div class="container">
+  <center>
+  <h1>
+    Informacion de solicitud
+      
+  </h1>
+  <hr/>
+      Descripcion: {{ solicitud.descripcion }} <br>
+      Estatus: {{ solicitud.estatus_solicitud }}   <br>
+      Fecha de creacion: {{ solicitud.fecha_creacion }}   <br>
+      Fecha estimada: {{ solicitud.fecha_estimada }}   <br>
+      <br>
+  	  <a href="{% url 'home' %}"> Atras </a>  <br>
+      <a href="{% url 'eliminar_solicitud' solicitud.id %}"> Eliminar </a>
+
+<br>
+<hr/>
+
+
+</div>

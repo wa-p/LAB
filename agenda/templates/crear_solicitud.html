@@ -1,0 +1,17 @@
+<h1>
+    <center>Crear Tarea
+      
+  </h1>
+  <hr/>
+<br>
+<center><form action="/crear_solicitud/" method="post">
+{% csrf_token %}
+
+{{  form.as_ul }}
+<br>
+
+<input type="submit" name="submit" value="Crear Solicitud"></form>
+
+<a href="{% url 'home' %}"> Atras </a>  <br>
+<br>
+<hr/>

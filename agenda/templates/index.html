@@ -1,0 +1,52 @@
+<div class="container"> {% csrf_token %}
+  {% load url from future %}
+  <p><b>Usuario:</b> {{ user.last_name }}</p>
+
+  <a href="{% url 'logout' %}"> Cerrar Sesión </a>
+
+
+  <h1>
+    <center>Lista de Tareas
+      
+  </h1>
+  <hr/>
+  <center>
+  <br>
+  
+  <a href="{% url 'crear_solicitud' %}">Crear Tarea</a>
+  <a href="{% url 'ver_status' %}">Consultar Status</a>
+  
+  <br><br>
+  
+  <!-- <table border='1'>
+  	<tr>
+  		<th>Descripcion</th>
+  		<th>Estatus Tarea</th>
+  		<th>Fecha Creacion</th>
+  		<th>Fecha Estimada</th>
+  		<th>Gestionar</th>
+  {% for tarea in tareas %}
+  <tr>
+      <td>{{ tarea.descripcion }}</td>
+      <td>{{ tarea.estatus_tarea }}
+      <form action="{% url 'actualizar_estatus' tarea.id %}" method="post">
+        {% csrf_token %}
+        {% if tarea.estatus_tarea.id == 2 %}
+          <input type=checkbox name="estatus" value="1" onclick="this.form.submit();" checked>
+        {% else %}
+          <input type=checkbox name="estatus" value="2" onclick="this.form.submit();">
+        {% endif %}
+      </form>
+      </td>
+      <td>{{ tarea.fecha_creacion }}</td>
+      <td>{{ tarea.fecha_estimada }}</td>
+      <td><a href="{% url 'ver_tarea' tarea.id %}"> Ver </a>  
+      <a href="{% url 'eliminar_tarea' tarea.id %}"> Eliminar </a></td>
+  </tr>
+  {% endfor %}
+  </table> -->
+  <br>
+</div>
+
+<br>
+<hr/>

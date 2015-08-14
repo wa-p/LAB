@@ -1,0 +1,43 @@
+<div class="container"> {% csrf_token %}
+  {% load url from future %}
+  <p><b>Usuario:</b>  {{ user.last_name }}</p>
+
+  <a href="{% url 'logout' %}"> Cerrar Sesión </a>
+
+
+  <h1>
+    <center>Lista de solicituds
+      
+  </h1>
+  <hr/>
+  <center>
+  <br>
+  
+  <a href="{% url 'crear_solicitud' %}">Crear solicitud</a>
+  
+  <br><br>
+  
+  <table border='1'>
+  	<tr>
+  		<th>Descripcion</th>
+  		<th>Estatus solicitud</th>
+  		<th>Fecha Creacion</th>
+  		<th>Fecha Estimada</th>
+  		<th>Gestionar</th>
+  {% for solicitud in solicituds %}
+  <tr>
+      <td>{{ solicitud.descripcion }}</td>
+      <td>{{ solicitud.estatus_solicitud }}
+      
+      </td>
+      <td>{{ solicitud.fecha_creacion }}</td>
+      <td>{{ solicitud.fecha_estimada }}</td>
+      <td><a href="{% url 'eliminar_solicitud' solicitud.cod_solicitud %}"> Eliminar </a></td>
+  </tr>
+  {% endfor %}
+  </table> 
+  <br>
+</div>
+<a href="{% url 'home' %}"> Atras </a>  <br>
+<br>
+<hr/>

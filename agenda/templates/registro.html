@@ -1,0 +1,25 @@
+<h1> REGISTRO
+		<h1>
+    <center>Crear Tarea
+      
+  </h1>
+  <hr/>
+<br>
+<center><form action="/registro/" method="post">
+
+{% csrf_token %}
+{{  form.as_p }}
+<br>
+
+<input type="submit" name="submit" value="Registrar usuario">
+
+
+
+
+</form>
+
+<a href="{% url 'home' %}"> Atras </a>  <br>
+<br>
+<hr/>
+
+</h1>
